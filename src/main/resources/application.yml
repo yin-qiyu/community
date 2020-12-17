@@ -1,0 +1,40 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  thymeleaf:
+    prefix: classpath:/templates/
+    mode: HTML
+    cache: false
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+  mvc:
+    # 这里配置的pathPatterns和引入的js要一致
+    static-path-pattern: /**
+  resources:
+    static-locations: classpath:/static/, classpath:/templates/
+
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.china.soldier.entity
+
+# 配置pagehelper参数
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+#showSql
+logging:
+  level:
+    com:
+      example:
+        mapper : debug
