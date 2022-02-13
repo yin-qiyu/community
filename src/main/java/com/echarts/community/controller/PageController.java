@@ -1,4 +1,4 @@
-package com.echarts.community.web;
+package com.echarts.community.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

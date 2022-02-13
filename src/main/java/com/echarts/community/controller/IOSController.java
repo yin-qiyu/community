@@ -1,4 +1,4 @@
-package com.echarts.community.web;
+package com.echarts.community.controller;
 
 import com.echarts.community.config.Result;
 import com.echarts.community.entity.IOS;

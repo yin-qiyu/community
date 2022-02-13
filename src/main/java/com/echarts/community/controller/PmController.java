@@ -1,8 +1,8 @@
-package com.echarts.community.web;
+package com.echarts.community.controller;
 
 import com.echarts.community.config.Result;
-import com.echarts.community.entity.Humidity;
-import com.echarts.community.service.HumidityService;
+import com.echarts.community.entity.Pm;
+import com.echarts.community.service.PmService;
 import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,17 +15,18 @@ import java.util.List;
  * @author baker_zhuang
  */
 
-@Api(tags="湿度", description="湿度")
-@RequestMapping("/humidity")
+@Api(tags="PM2.5", description="湿度")
+@RequestMapping("/pm")
 @RestController
-public class HumidityController {
+public class PmController {
 
     @Resource
-    private HumidityService humidityService;
+    private PmService pmService;
+
 
     @GetMapping("/findAll")
     public Result findAll() {
-        List<Humidity> list = humidityService.findAll();
+        List<Pm> list = pmService.findAll();
         return Result.ok(list);
     }
 
